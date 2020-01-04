@@ -1,0 +1,13 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/big_chicken
+    username: user
+    password: 1234
+    platform: mysql
+  jpa:
+    hibernate:
+      ddl-auto: update
+spring.data:
+  rest:
+    return-body-on-create: true
+    return-body-on-update: true
