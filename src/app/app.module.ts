@@ -16,6 +16,15 @@ import {LoginComponent} from './login/login.component';
 import {AuthService} from './auth.service';
 import {AuthenticatedMenuComponent} from './header/authenticated-menu/authenticated-menu.component';
 import {DropdownDirective} from './shared/dropdown.directive';
+import {CategoriesComponent} from './categories/categories.component';
+import {CategoriesListComponent} from './categories/categories-list/categories-list.component';
+import {CategoriesListItemComponent} from './categories/categories-list/categories-list-item/categories-list-item.component';
+import {HttpClientModule} from '@angular/common/http';
+import {CategoryComponent} from './categories/category/category.component';
+import {ProductsComponent} from './products/products.component';
+import {ProductListComponent} from './products/product-list/product-list.component';
+import {ProductListItemComponent} from './products/product-list/product-list-item/product-list-item.component';
+import {ProductComponent} from './products/product/product.component';
 
 const firebaseUiAuthConfig: firebaseui.auth.Config = {
   signInFlow: 'popup',
@@ -41,10 +50,19 @@ const firebaseUiAuthConfig: firebaseui.auth.Config = {
     PrivacyPolicyComponent,
     LoginComponent,
     AuthenticatedMenuComponent,
-    DropdownDirective
+    DropdownDirective,
+    CategoriesComponent,
+    CategoriesListComponent,
+    CategoriesListItemComponent,
+    CategoryComponent,
+    ProductsComponent,
+    ProductListComponent,
+    ProductListItemComponent,
+    ProductComponent
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireAuthModule,
