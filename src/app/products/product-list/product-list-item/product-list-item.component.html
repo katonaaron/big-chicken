@@ -1,0 +1,6 @@
+<ng-template [ngIf]="product">
+  <a [routerLink]="['/product', product.name]">
+    <img alt="{{product.name}}" class="img-responsive" src="{{product.imagePath}}">
+  </a>
+  <h5><a [routerLink]="['/product', product.name]">{{product.name}}</a></h5>
+</ng-template>

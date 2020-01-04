@@ -1,0 +1,15 @@
+<ng-template [ngIf]="product">
+  <p>
+    <a *ngIf="productCategory"
+       [routerLink]="['/category', productCategory.name]">{{productCategory.name}}</a>
+    / {{product.name}}</p>
+  <div class="row">
+    <div class="col-sm-5">
+      <img alt="{{product.name}}" class="img-responsive" src="{{product.imagePath}}">
+    </div>
+    <div class="col-sm-7">
+      <h1>{{product.name}}</h1>
+    </div>
+  </div>
+</ng-template>
+
