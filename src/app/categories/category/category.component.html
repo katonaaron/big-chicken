@@ -1,0 +1,5 @@
+<ng-template [ngIf]="productCategory">
+  <p>{{productCategory.name}}</p>
+  <h1>Order {{productCategory.name}} in Cluj - Restaurant Big Chicken</h1>
+  <app-product-list [productCategory]="productCategory"></app-product-list>
+</ng-template>
