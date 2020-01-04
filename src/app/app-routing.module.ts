@@ -2,9 +2,15 @@ import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
 import {HomeComponent} from './home/home.component';
 import {ErrorPageComponent} from './error-page/error-page.component';
+import {TermsOfServiceComponent} from './terms-of-service/terms-of-service.component';
+import {PrivacyPolicyComponent} from './privacy-policy/privacy-policy.component';
+import {LoginComponent} from './login/login.component';
 
 const appRoutes: Routes = [
   {path: '', component: HomeComponent},
+  {path: 'login', component: LoginComponent},
+  {path: 'tos', component: TermsOfServiceComponent},
+  {path: 'privacy', component: PrivacyPolicyComponent},
   {path: 'not-found', component: ErrorPageComponent, data: {message: 'Page not found!'}},
   {path: '**', redirectTo: '/not-found'},
 ];
