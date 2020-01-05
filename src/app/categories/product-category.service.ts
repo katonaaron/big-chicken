@@ -9,7 +9,7 @@ import {ProductCategory} from './product-category.model';
   providedIn: 'root'
 })
 export class ProductCategoryService {
-  private url = environment.ApiUrl + '/productCategories';
+  private url = environment.ApiUrl + 'productCategories';
 
   constructor(private http: HttpClient) {
   }

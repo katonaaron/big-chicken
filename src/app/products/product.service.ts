@@ -10,7 +10,7 @@ import {Product} from './product.model';
 })
 export class ProductService {
 
-  private url = environment.ApiUrl + '/products';
+  private url = environment.ApiUrl + 'products';
 
   constructor(private http: HttpClient) {
   }
