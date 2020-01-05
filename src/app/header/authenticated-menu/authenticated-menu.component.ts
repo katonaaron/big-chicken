@@ -27,7 +27,6 @@ export class AuthenticatedMenuComponent implements OnInit {
 
   onLogout() {
     this.authService.logout().then(() => {
-      this.router.navigate(['/']);
     });
   }
 
