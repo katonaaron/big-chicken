@@ -8,7 +8,29 @@
       <img alt="{{product.name}}" class="img-responsive" src="{{product.imagePath}}">
     </div>
     <div class="col-sm-7">
-      <h1>{{product.name}}</h1>
+      <div class="col-sm-12">
+        <h1 class="TitleProduct">{{product.name}}</h1>
+      </div>
+      <div class="col-sm-12">
+        <div class="PriceProduct">
+          <div class="NewPrice">
+            {{product.price.toFixed(2)}} Lei
+          </div>
+          <div class="tvaPrice">
+            *including VAT
+          </div>
+        </div>
+        <b>Barcode:</b> {{product.barcode}}
+      </div>
+      <div class="col-sm-12 productDescription">
+        <strong>Ingredients: </strong>{{product.ingredients}}
+      </div>
+      <div class="BtnAddToCart">
+        <button class="btn btn-default btn-cart middle-cart" style="margin-bottom: 20px;float: right;">
+          <span class="glyphicon glyphicon-shopping-cart"></span>
+          Add to cart
+        </button>
+      </div>
     </div>
   </div>
 </ng-template>

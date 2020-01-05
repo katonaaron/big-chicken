@@ -1,6 +1,17 @@
-<ng-template [ngIf]="product">
-  <a [routerLink]="['/product', product.name]">
-    <img alt="{{product.name}}" class="img-responsive" src="{{product.imagePath}}">
-  </a>
-  <h5><a [routerLink]="['/product', product.name]">{{product.name}}</a></h5>
-</ng-template>
+<div *ngIf="product" class="ItemProduct">
+  <div class="ImgHeight">
+    <a [routerLink]="['/product', product.name]">
+      <img alt="{{product.name}}" src="{{product.imagePath}}">
+    </a></div>
+  <div class="DescriptionProduct">
+    <a [routerLink]="['/product', product.name]" class="ProductTitle">{{product.name}}</a>
+    <div class="ShortDescr">
+      <strong>Ingredients: </strong>{{product.ingredients}}
+    </div>
+    <div class="ProducPrice">
+      <span class="SpecialPrice"><span class="price first-price">{{product.price.toFixed(2)}} Lei</span></span>
+      <button class="btn btn-default">Add to cart</button>
+    </div>
+  </div>
+
+</div>

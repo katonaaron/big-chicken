@@ -1,0 +1,138 @@
+.ProductTitle {
+  color: #000;
+  font-size: 15px;
+  font-weight: 700;
+  height: auto;
+  max-height: 43px;
+  text-align: left;
+  width: 100%;
+  float: left;
+  margin-bottom: 0;
+  line-height: 20px;
+}
+
+.ItemProduct {
+  border: 1px solid lightgray;
+  border-radius: 3px;
+  height: auto;
+  /*min-height: 425px;*/
+  max-height: 465px;
+  transition: all .5s;
+  -moz-transition: all .5s;
+  -webkit-transition: all .5s;
+  box-sizing: border-box;
+  float: left;
+  width: 100%;
+}
+
+.ShortDescr {
+  width: 100%;
+  float: left;
+  color: #696969;
+  font-size: 13px;
+  font-weight: 400;
+  text-align: left;
+  margin: 10px 0;
+  height: auto;
+  overflow: hidden;
+  max-height: 80px;
+  min-height: 65px;
+}
+
+.DescriptionProduct {
+  width: 100%;
+  float: left;
+  padding: 0 10px 15px 10px;
+}
+
+.ImgHeight {
+  height: 190px;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.ImgHeight img {
+  position: absolute;
+  margin: auto;
+  right: 0;
+  left: -12.5%;
+  width: 125%;
+  height: auto;
+  transition: all .5s;
+  -moz-transition: all .5s;
+  -webkit-transition: all .5s;
+}
+
+.ProducPrice {
+  width: 100%;
+  float: left;
+  color: #000;
+  font-size: 13px;
+  font-weight: 400;
+  margin-top: 10px;
+  position: relative;
+}
+
+.SpecialPrice {
+  width: 35%;
+  float: left;
+  box-sizing: border-box;
+  padding-left: 7px;
+}
+
+.first-price {
+  position: relative;
+  top: 6px;
+}
+
+.price {
+  width: 100%;
+  float: left;
+  color: #c12026;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.ItemProduct .btn-default {
+  padding: 8px 18px;
+}
+
+.ItemProduct .btn {
+  font-size: 12px;
+  font-weight: 700;
+  padding: 8px 15px;
+  float: right;
+}
+
+.btn-default {
+  border-radius: 5px;
+  background-color: #c12026;
+  border-color: #c12026;
+  color: #fff;
+  font-weight: 600;
+}
+
+.btn {
+  padding: 9px 30px;
+  font-size: 13px;
+  font-weight: 400;
+  text-transform: uppercase;
+  transition: .5s all;
+  -moz-transition: .5s all;
+  -webkit-transition: .5s all;
+}
+
+@media screen and (max-width: 1200px) and (min-width: 992px) {
+  .ImgHeight {
+    height: 200px;
+  }
+
+  .SpecialPrice {
+    width: 30%;
+  }
+
+  .ItemProduct .btn {
+    margin-left: 2%;
+  }
+}
