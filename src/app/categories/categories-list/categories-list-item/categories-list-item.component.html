@@ -1,4 +1,4 @@
-<h5><a [routerLink]="['category', productCategory.name]">{{productCategory.name}}</a></h5>
 <a [routerLink]="['category', productCategory.name]">
   <img alt="{{productCategory.name}}" class="img-responsive" src="{{productCategory.imagePath}}">
 </a>
+<a [routerLink]="['category', productCategory.name]" class="textImage">{{productCategory.name}}</a>
