@@ -2,8 +2,6 @@ import {Component, Input, OnInit} from '@angular/core';
 import {Product} from '../product.model';
 import {ProductService} from '../product.service';
 import {ProductCategory} from '../../categories/product-category.model';
-import {Observable} from 'rxjs';
-import {ProductCollection} from '../product-collection.model';
 
 @Component({
   selector: 'app-product-list',
@@ -18,15 +16,10 @@ export class ProductListComponent implements OnInit {
   }
 
   ngOnInit() {
-    let observable: Observable<ProductCollection>;
-    if (this.productCategory) {
-      observable = this.productService.getAllProductsFromUrl(this.productCategory._links.products.href);
-    } else {
-      observable = this.productService.getAllProducts();
-    }
-    observable.subscribe((productCollection) => {
-      this.products = productCollection._embedded.products;
-    });
+    this.productService.getAllProductsFromUrl(this.productCategory._links.products.href)
+      .subscribe((productCollection) => {
+        this.products = productCollection._embedded.products;
+      });
   }
 
 }
