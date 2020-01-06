@@ -24,6 +24,11 @@ export class ProductService {
       .get<ProductCollection>(url);
   }
 
+  public getProductFromUrl(url: string): Observable<Product> {
+    return this.http
+      .get<Product>(url);
+  }
+
   public getProductByName(name: string): Observable<Product> {
     console.log(name, this.url);
     return this.http
