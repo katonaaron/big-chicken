@@ -30,7 +30,6 @@ export class ProductService {
   }
 
   public getProductByName(name: string): Observable<Product> {
-    console.log(name, this.url);
     return this.http
       .get<Product>(this.url + '/search/findByName?name=' + name);
   }
