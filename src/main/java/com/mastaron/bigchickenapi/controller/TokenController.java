@@ -2,6 +2,7 @@ package com.mastaron.bigchickenapi.controller;
 
 import com.google.firebase.auth.FirebaseAuthException;
 import com.mastaron.bigchickenapi.FirebaseUtil;
+import com.mastaron.bigchickenapi.model.FirebaseToken;
 import com.mastaron.bigchickenapi.model.User;
 import com.mastaron.bigchickenapi.repository.UserRepository;
 import org.springframework.data.rest.webmvc.ResourceNotFoundException;
@@ -19,10 +20,10 @@ public class TokenController {
     }
 
     @GetMapping("/token")
-    public User getUserByIdToken(@RequestBody String FirebaseToken) {
+    public User getUserByIdToken(@RequestBody FirebaseToken firebaseToken) {
         String uid;
         try {
-            uid = FirebaseUtil.getUidFromIdToken(FirebaseToken);
+            uid = FirebaseUtil.getUidFromIdToken(firebaseToken.getToken());
         } catch (FirebaseAuthException e) {
             throw new ResourceNotFoundException("Invalid token");
         }
@@ -33,10 +34,10 @@ public class TokenController {
     }
 
     @PostMapping("/token")
-    public User createToken(@RequestBody String FirebaseToken) {
+    public User createToken(@RequestBody FirebaseToken firebaseToken) {
         String uid;
         try {
-            uid = FirebaseUtil.getUidFromIdToken(FirebaseToken);
+            uid = FirebaseUtil.getUidFromIdToken(firebaseToken.getToken());
         } catch (FirebaseAuthException e) {
             throw new ResourceNotFoundException("Invalid token");
         }
