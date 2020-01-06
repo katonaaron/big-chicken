@@ -1,0 +1,31 @@
+<div class="CartRight">
+  <div (mouseenter)="collapsed = false" (mouseleave)="collapsed = true" class="DivShopping">
+    <div class="ShoppingCartBoxList" id="ShoppingCartBoxList">
+      <a routerLink="/cart">
+        <div class="CartDiv"><span class="glyphicon glyphicon-shopping-cart"></span><span
+          class="cart-span">Cart</span></div>
+      </a>
+      <div *ngIf="(shoppingCartService.numberOfProducts | async) > 0">
+        <div class="cartCount">{{shoppingCartService.numberOfProducts | async}}</div>
+        <div [class.hidden]="collapsed" class="ShoppingList">
+          <span class="FavoriteCount">My cart &nbsp; <span
+            style="color:#ccc;">{{shoppingCartService.numberOfProducts | async}}</span></span>
+          <div class="ShoppingRow">
+            <div class="ShoppingItem">
+              <app-shopping-cart-menu-item
+                *ngFor="let itemAndProduct of shoppingCartService.itemsAndProducts | async"
+                [itemAndProduct]="itemAndProduct"
+              ></app-shopping-cart-menu-item>
+            </div>
+          </div>
+          <div class="TotalProd">
+            Subtotal <span style="float:right;font-size:16px;">  {{shoppingCartService.total | async}} Lei</span>
+          </div>
+          <div class="CartLink">
+            <a routerLink="/cart">Shopping cart</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
