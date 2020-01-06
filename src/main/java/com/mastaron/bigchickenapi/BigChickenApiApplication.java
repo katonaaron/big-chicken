@@ -11,7 +11,6 @@ import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 import org.springframework.web.filter.CorsFilter;
 
-import java.io.FileInputStream;
 import java.io.IOException;
 
 @SpringBootApplication
@@ -38,7 +37,7 @@ public class BigChickenApiApplication {
         CorsConfiguration config = new CorsConfiguration();
        //config.setAllowCredentials(true); // you USUALLY want this
         config.addAllowedOrigin("*");
-        //config.addAllowedHeader("*");
+        config.addAllowedHeader("*");
         config.addAllowedMethod("GET");
         config.addAllowedMethod("PUT");
         config.addAllowedMethod("POST");
