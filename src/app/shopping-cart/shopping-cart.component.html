@@ -1,0 +1,30 @@
+<div class="ShoppingCartPage" style="margin:50px 0;">
+  <div class="row" style="margin-right:-15px;margin-left:-15px;">
+    <div class="TitleCartList col-sm-12">
+      SHOPPING SUMMARY
+    </div>
+
+    <div id="ShoppingCartPageItemsList">
+      <div class="col-sm-8">
+        <ul class="ShoppingUl">
+          <app-shopping-cart-item
+            *ngFor="let itemAndProduct of shoppingCartService.itemsAndProducts | async"
+            [itemAndProduct]="itemAndProduct"
+          ></app-shopping-cart-item>
+        </ul>
+      </div>
+      <div class="col-sm-4 ">
+        <div class="CosDeCumparaturi">
+          <div class="titlucos">TOTAL SHOPPING CART</div>
+          <div class="TotalProd" style="border-top:0;margin-top:0;">
+            <div style="float:left;"> Total:</div>
+            <div style="float:right;font-size:16px;">{{shoppingCartService.total | async}} Lei</div>
+          </div>
+
+          <a [routerLink]="['checkout']" class="btn btn-default btn-lg"
+             style="width:100%;font-size:14px;padding:10px 30px;">Next Step</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

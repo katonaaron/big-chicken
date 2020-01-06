@@ -25,6 +25,10 @@ import {ProductsComponent} from './products/products.component';
 import {ProductListComponent} from './products/product-list/product-list.component';
 import {ProductListItemComponent} from './products/product-list/product-list-item/product-list-item.component';
 import {ProductComponent} from './products/product/product.component';
+import {ShoppingCartComponent} from './shopping-cart/shopping-cart.component';
+import {ShoppingCartItemComponent} from './shopping-cart/shopping-cart-item/shopping-cart-item.component';
+import {ShoppingCartMenuComponent} from './header/shopping-cart-menu/shopping-cart-menu.component';
+import {ShoppingCartMenuItemComponent} from './header/shopping-cart-menu/shopping-cart-menu-item/shopping-cart-menu-item.component';
 
 const firebaseUiAuthConfig: firebaseui.auth.Config = {
   signInFlow: 'popup',
@@ -57,7 +61,11 @@ const firebaseUiAuthConfig: firebaseui.auth.Config = {
     ProductsComponent,
     ProductListComponent,
     ProductListItemComponent,
-    ProductComponent
+    ProductComponent,
+    ShoppingCartComponent,
+    ShoppingCartItemComponent,
+    ShoppingCartMenuComponent,
+    ShoppingCartMenuItemComponent
   ],
   imports: [
     BrowserModule,
