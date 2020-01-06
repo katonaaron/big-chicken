@@ -99,10 +99,9 @@ a {
 
 .CheckoutShoppingList .form-control {
   height: 33px;
-  width: 55px;
 }
 
-.ProducPriceCos {
+.ProductPriceCos {
   text-align: right;
   width: 100%;
   margin-top: 10px;
