@@ -1,12 +1,12 @@
-<div *ngIf="itemAndProduct" class="row CheckoutShoppingList">
+<div *ngIf="item" class="row CheckoutShoppingList">
   <div class="col-sm-3 align-center" style="padding-left:0;padding-top:15px">
-    <a [routerLink]="['/product',itemAndProduct.product.name]">
-      <img alt="{{itemAndProduct.product.name}}" class="ItemPicture" src="{{itemAndProduct.product.imagePath}}">
+    <a [routerLink]="['/product',item.product.name]">
+      <img alt="{{item.product.name}}" class="ItemPicture" src="{{item.product.imagePath}}">
     </a>
   </div>
   <div class="col-sm-9">
     <div class="ProductTitleCos cartTitleProduct">
-      <a [routerLink]="['/product',itemAndProduct.product.name]"> {{itemAndProduct.product.name}}  </a>
+      <a [routerLink]="['/product',item.product.name]"> {{item.product.name}}  </a>
     </div>
 
     <div class="row" style="margin-right:-15px;margin-left:-15px;">
@@ -14,10 +14,9 @@
         <span style="position:relative;top:5px;float:left;margin-right:5px;font-weight:700;">Quantity:</span>
 
         <label>
-          <select (input)="onSelect($event)" class="form-control left selectCart">
+          <select (ngModelChange)="onChange($event)" [ngModel]="item.quantity" class="form-control left selectCart">
             <option
               *ngFor="let quantity of quantities"
-              [selected]="quantity === itemAndProduct.shoppingCartItem.quantity"
               value="{{quantity}}"
             >{{quantity}}</option>
           </select>
@@ -25,7 +24,7 @@
       </div>
       <div class="col-sm-6" style="text-align:right;">
         <div class="ProductPriceCos">
-          {{itemAndProduct.product.price}} Lei
+          {{item.product.price}} Lei
         </div>
       </div>
 

@@ -1,17 +1,17 @@
-<div *ngIf="itemAndProduct" class="row">
+<div *ngIf="item" class="row">
   <div class="col-sm-3 ImgCartList align-center">
-    <a [routerLink]="['/product', itemAndProduct.product.name]" class="ItemPicture">
-      <img alt="{{itemAndProduct.product.name}}" src="{{itemAndProduct.product.imagePath}}">
+    <a [routerLink]="['/product', item.product.name]" class="ItemPicture">
+      <img alt="{{item.product.name}}" src="{{item.product.imagePath}}">
     </a>
   </div>
   <div class="col-sm-9" style="padding-right:0;padding-left:0;">
-    <a [routerLink]="['/product', itemAndProduct.product.name]" class="ItemTitle col-sm-12">
-      {{itemAndProduct.product.name}} </a>
+    <a [routerLink]="['/product', item.product.name]" class="ItemTitle col-sm-12">
+      {{item.product.name}} </a>
     <div class="col-sm-6">
-      <b> Quantity:</b>&nbsp; {{itemAndProduct.shoppingCartItem.quantity}}
+      <b> Quantity:</b>&nbsp; {{item.quantity}}
     </div>
     <div class="col-sm-6" style="text-align:right;font-weight:500;">
-      {{itemAndProduct.product.price}} Lei
+      {{item.product.price}} Lei
     </div>
   </div>
 </div>
