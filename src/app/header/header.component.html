@@ -12,11 +12,14 @@
           <a class="dropdown-toggle" data-toggle="dropdown">
             Delivery<span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li *ngFor="let productCategory of productCategoryService.categories$ | async">
+            <li *ngFor="let productCategory of productCategories">
               <a [routerLink]="['category', productCategory.name]">{{productCategory.name}}</a>
             </li>
           </ul>
         </li>
+        <!--        <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">-->
+        <!--          <a routerLink="/wiki">Wiki</a>-->
+        <!--        </li>-->
       </ul>
       <app-authenticated-menu></app-authenticated-menu>
       <app-shopping-cart-menu></app-shopping-cart-menu>
