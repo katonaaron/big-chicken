@@ -29,6 +29,7 @@ import {ShoppingCartComponent} from './shopping-cart/shopping-cart.component';
 import {ShoppingCartItemComponent} from './shopping-cart/shopping-cart-item/shopping-cart-item.component';
 import {ShoppingCartMenuComponent} from './header/shopping-cart-menu/shopping-cart-menu.component';
 import {ShoppingCartMenuItemComponent} from './header/shopping-cart-menu/shopping-cart-menu-item/shopping-cart-menu-item.component';
+import {FormsModule} from '@angular/forms';
 
 const firebaseUiAuthConfig: firebaseui.auth.Config = {
   signInFlow: 'popup',
@@ -73,7 +74,8 @@ const firebaseUiAuthConfig: firebaseui.auth.Config = {
     AppRoutingModule,
     AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireAuthModule,
-    FirebaseUIModule.forRoot(firebaseUiAuthConfig)
+    FirebaseUIModule.forRoot(firebaseUiAuthConfig),
+    FormsModule
   ],
   providers: [AuthService],
   bootstrap: [AppComponent]
