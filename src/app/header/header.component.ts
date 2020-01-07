@@ -1,5 +1,4 @@
 import {Component, OnInit} from '@angular/core';
-import {ProductCategory} from '../categories/product-category.model';
 import {ProductCategoryService} from '../categories/product-category.service';
 
 @Component({
@@ -9,18 +8,10 @@ import {ProductCategoryService} from '../categories/product-category.service';
 })
 export class HeaderComponent implements OnInit {
   collapsed = false;
-  productCategories: ProductCategory[] = [];
 
   constructor(private productCategoryService: ProductCategoryService) {
   }
 
   ngOnInit() {
-    this.productCategoryService
-      .getAllProductCategories()
-      .subscribe(
-        (productCategoryCollection) => {
-          this.productCategories = productCategoryCollection._embedded.productCategories;
-        }
-      );
   }
 }
