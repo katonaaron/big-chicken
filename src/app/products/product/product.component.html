@@ -26,7 +26,8 @@
         <strong>Ingredients: </strong>{{product.ingredients}}
       </div>
       <div class="BtnAddToCart">
-        <button class="btn btn-default btn-cart middle-cart" style="margin-bottom: 20px;float: right;">
+        <button (click)="onAddToCart()" class="btn btn-default btn-cart middle-cart"
+                style="margin-bottom: 20px;float: right;">
           <span class="glyphicon glyphicon-shopping-cart"></span>
           Add to cart
         </button>
